@@ -1,18 +1,34 @@
-초기 설정(Window)
-
-- https://docs.flutter.dev/release/archive?tab=windows 접속 및 SDK 다운
-- 압축을 해제
-- 시스템 변수의 path에 압축을 해제한 파일의 bin 경로를 설정 (ex : C:\flutter\flutter\bin)
-- Intelij로 셋팅시 new project에서 plugins를 들어가 flutter를 검색 후 install
-
-
+**환경설정은 블로그를 참고
 
 
 
 Dart
 
-- intellij로 셋팅
+- Flutter가 사용하는 언어
+- 구글에서 만든 언어로써 Flutter 또한 구글에서 개발하였다. 그렇기 때문에 Flutter를 위해 Dart 언어의 지원이 가능
+- 2개의 컴파일러를 가지고 있다.
+- Dart Web : 작성한 코드를 java script로 변환
+- Dart Native : CPU의 아키텍쳐에 맞게 변환
 
 
-- 프로젝트 생성 - Dart SDK path 설정, 초기 설정에서 flutter의 path안에 Dart SDK가 설치 되어 있다. (C:\flutter\flutter\bin\cache\dart-sdk)
-- 프로젝트 path를 잡아주고 생성
+
+특징
+
+Dart Native에는 JIT, AOT 컴파일러를 지원
+
+- AOT : 컴파일 후 OS에 맞는 바이너리를 배포
+- JIT : Dart VM을 사용하여 코드가 가상머신 위에서 도는 느낌, 개발시에 빠른 디버깅을 위해 사용
+- JIT와 AOT를 통해 빠른 개발과 배포를 진행한다.
+
+
+
+Null Safety
+
+- 다른 언어(java, C 등)과 다르게 Null safety하게 설계하여 개발 되었다.
+
+
+
+
+
+
+
