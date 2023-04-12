@@ -2,7 +2,24 @@ import 'package:dart/dart.dart' as dart;
 import 'package:test/expect.dart';
 
 void main(List<String> arguments) {
-  nullTest();
+  constTest();
+}
+
+void constTest(){
+  //ccopile-time에 알고 있어야하는 값
+  const name = 'kyw';
+
+}
+
+void lateTest(){
+  late final String name;
+  //do something, go to api, get name
+  name = 'kyw';
+}
+
+void finalTest(){
+  final name = 'kyw';
+  final String name2 = 'kyw';
 }
 
 void nullTest(){
