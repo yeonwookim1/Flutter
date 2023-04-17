@@ -1,8 +1,46 @@
 import 'package:dart/dart.dart' as dart;
-import 'package:test/expect.dart';
 
 void main(List<String> arguments) {
-  constTest();
+  num a = 3;
+  a = 1.2;
+  listTest();
+}
+
+void stringTest(){
+  var name = "kyw";
+  var age = 30;
+  var greeting = "hello my name is $name, nice to meet you, my age is ${age + 2}";
+  print(greeting);
+
+}
+
+void listTest(){
+  var isTest= true;
+  List<int> numbers = [1,2,3,4,5, if(isTest) 6];  //collection if
+  numbers.add(7);
+  print(numbers);
+  for(var i = 0; i<numbers.length; i++){
+    print(numbers[i]);
+  }
+
+  var oldFriends = ['nico', 'name'];
+  var newFriends = [
+    'lewis',
+    'ralph',
+    'darren',
+    for(var friend in oldFriends) "하트 $friend"
+  ];
+
+  print(newFriends);
+
+  var koreaFoods = ['kimchi'];
+  var allFoods = ['pizza', for(var i in koreaFoods) "$i made by korea"];
+  print(allFoods);
+
+  var allFoods2 = ['pizza'];
+  for(var str in koreaFoods){
+    allFoods2.add("$str made by korea");
+  }
 }
 
 void constTest(){
