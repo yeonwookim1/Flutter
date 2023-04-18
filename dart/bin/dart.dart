@@ -3,7 +3,22 @@ import 'package:dart/dart.dart' as dart;
 void main(List<String> arguments) {
   num a = 3;
   a = 1.2;
-  listTest();
+  mapTest();
+}
+
+void mapTest(){
+  var player={
+    'name': 'kyw',
+    'xp' : 19.99,
+    'superpower' : true,
+  };
+  
+
+  Map<int, bool> player2 = {
+    1: true,
+    2: true,
+    3: false,
+  };
 }
 
 void stringTest(){

@@ -63,3 +63,25 @@ String interpolation
   ```
 
   ​
+
+Map
+
+- key와 value로 이루어짐, value타입이 여러개인 경우  value는 object를 기본으로 가진다.
+
+- var로 선언시 컴파일러가 key와 value의 타입을 추측하여 사용
+
+- ```dart
+  var player={
+      'name': 'kyw',
+      'xp' : 19.99,
+      'superpower' : true,
+    };
+
+    Map<int, bool> player2 = {
+      1: true,
+      2: true,
+      3: false,
+    };
+  ```
+
+  ​
