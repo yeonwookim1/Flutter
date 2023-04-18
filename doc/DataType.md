@@ -77,6 +77,8 @@ Map
       'superpower' : true,
     };
 
+  player['test'] = false;	//값 추가
+
     Map<int, bool> player2 = {
       1: true,
       2: true,

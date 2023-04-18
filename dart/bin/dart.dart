@@ -12,7 +12,7 @@ void mapTest(){
     'xp' : 19.99,
     'superpower' : true,
   };
-  
+  player['test'] = false;
 
   Map<int, bool> player2 = {
     1: true,
