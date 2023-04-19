@@ -87,3 +87,20 @@ Map
   ```
 
   ​
+
+Set
+
+- 순서가 있지만 unique한 값을 가짐
+
+- 중괄호{}를 사용해서 선언된다. (list는 대괄호 [] )
+
+- ```dart
+  var numbers = {1,2,3,4};
+    Set<int> numbers2 = {1,2,3,4};
+    numbers2.add(5);
+    numbers2.add(5);
+    numbers2.add(5);
+  ```
+
+
+

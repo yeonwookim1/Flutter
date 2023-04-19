@@ -3,7 +3,40 @@ import 'package:dart/dart.dart' as dart;
 void main(List<String> arguments) {
   num a = 3;
   a = 1.2;
-  mapTest();
+
+  print(paramTest2(
+    name : 'kyw',
+    age : 27
+  ));
+
+  print(paramTest(
+    name : 'kyw'
+  ));
+}
+
+String paramTest2({required String name, required int age}){
+  return "hello $name my age is $age";
+}
+
+String paramTest({String name = 'test', int age = 30}){
+  return "hello $name my age is $age";
+}
+
+//line이 한 개 인경우 간단하게 return을 표현할 수 있다.
+String sayHello(String name) => "hello $name nice to meet you";
+
+String sayBye(String name){
+  return "Bye $name nice to meet you";
+}
+
+void setTest(){
+  var numbers = {1,2,3,4};
+  Set<int> numbers2 = {1,2,3,4};
+  numbers2.add(5);
+  numbers2.add(5);
+  numbers2.add(5);
+
+  print(numbers2);
 }
 
 void mapTest(){
