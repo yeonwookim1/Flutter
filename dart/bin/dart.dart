@@ -4,14 +4,28 @@ void main(List<String> arguments) {
   num a = 3;
   a = 1.2;
 
-  print(paramTest2(
-    name : 'kyw',
-    age : 27
-  ));
+  ListOfInts aa = [1,2,3];
+  print(reverseListOfNum(aa));
+}
 
-  print(paramTest(
-    name : 'kyw'
-  ));
+typedef ListOfInts = List<int>;
+
+ListOfInts reverseListOfNum(ListOfInts list){
+  var reversed = list.reversed; //iterable로 반환된다.
+  return reversed.toList();
+}
+
+String nullQQTest(String? name){
+  return name ??= 'default';
+}
+
+String capitalizeName(String? name) => name != null ? name.toUpperCase() : 'NON';
+
+String capitalizeName2(String? name) => name?.toUpperCase() ?? 'NON';
+
+String optionalTest(String name, int age, [String? country = 'korea']){
+
+  return "hello $name my age is $age i'm from $country";
 }
 
 String paramTest2({required String name, required int age}){
