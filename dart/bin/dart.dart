@@ -1,11 +1,35 @@
 import 'package:dart/dart.dart' as dart;
 
+class Player{
+
+  final String name;
+  int xp;
+  String team;
+  int age;
+
+  Player({required this.name
+    , required this.xp
+    , required this.team
+    , required this.age});
+
+
+  void sayHello(){
+    //변수명이 겹치는 상황이 아니면 this를 권고하지 않음
+    // var name = 123;
+    // print("HI my name is ${this.name}");
+    print("hi my name is $name");
+  }
+}
+
 void main(List<String> arguments) {
   num a = 3;
   a = 1.2;
 
-  ListOfInts aa = [1,2,3];
-  print(reverseListOfNum(aa));
+  var player = Player(name:"son", xp:1500, team:"kor ", age:30);
+  player.sayHello();
+
+  var player2 = Player(name:"holan", xp:1500, team:"nor", age:22);
+  player2.sayHello();
 }
 
 typedef ListOfInts = List<int>;
