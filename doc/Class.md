@@ -57,4 +57,47 @@ Argument
   }
   ```
 
+
+
+Named Constructor
+
+- 생성자를 매서드 처럼 선언하여 상황에 따라 다르게 사용할 수 있음
+
+- ```dart
+  class Player{
+
+    Player.createKorPlayer({required String name, required int age}) :
+    this.age = age,
+    this.name = name,
+    this.team = 'KOR',
+    this.xp = 0;
+  }
+  void main(){
+    var player = Player.createKorPlayer(name : "son", age :30);
+  }
+  ```
+
+- flutter에서 자주 사용하는 fromJson 예시
+
+- json 형식의 데이터를 받아서 객체로 만든다.
+
+- ```dart
+  class Player{
+    ...
+    Player.fromJson(Map<String, dynamic> playerJson) :
+        name = playerJson["name"],
+        xp = playerJson["xp"],
+        team = playerJson["team"],
+        age = playerJson["age"];
+    ...
+  }
+
+  void main(){
+    var apiData = [{"name" : "kyw","team":"kor", "xp": 999, "age" : 27}];
+    apiData.forEach((data){
+      var player = Player.fromJson(data);
+    });
+  }
+  ```
+
   ​

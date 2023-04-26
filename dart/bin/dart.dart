@@ -3,21 +3,38 @@ import 'package:dart/dart.dart' as dart;
 class Player{
 
   final String name;
-  int xp;
+  int xp, age;
   String team;
-  int age;
 
   Player({required this.name
     , required this.xp
     , required this.team
     , required this.age});
 
+  Player.fromJson(Map<String, dynamic> playerJson) :
+      name = playerJson["name"],
+      xp = playerJson["xp"],
+      team = playerJson["team"],
+      age = playerJson["age"];
+
+  Player.createKorPlayer({required String name, required int age}) :
+    this.age = age,
+    this.name = name,
+    this.team = 'KOR',
+    this.xp = 0;
+
+  Player.createNorPlayer(String name, int age) :
+    this.age = age,
+    this.name = name,
+    this.team = "NOR",
+    this.xp = 0;
+
 
   void sayHello(){
     //변수명이 겹치는 상황이 아니면 this를 권고하지 않음
     // var name = 123;
     // print("HI my name is ${this.name}");
-    print("hi my name is $name");
+    print("hi my name is $name, my team is $team");
   }
 }
 
@@ -25,11 +42,22 @@ void main(List<String> arguments) {
   num a = 3;
   a = 1.2;
 
-  var player = Player(name:"son", xp:1500, team:"kor ", age:30);
-  player.sayHello();
+  // var player = Player.createKorPlayer(name : "son", age :30);
+  // player.sayHello();
+  //
+  // var player2 = Player.createNorPlayer("holan", 21);
+  // player2.sayHello();
 
-  var player2 = Player(name:"holan", xp:1500, team:"nor", age:22);
-  player2.sayHello();
+  var apiData = [{"name" : "kyw","team":"kor", "xp": 999, "age" : 27},
+    {"name" : "son","team":"kor", "xp": 999, "age" : 30}];
+
+  apiData.forEach((data){
+    var player = Player.fromJson(data);
+    player.sayHello();
+  });
+
+
+
 }
 
 typedef ListOfInts = List<int>;
