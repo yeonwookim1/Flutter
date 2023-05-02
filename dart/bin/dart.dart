@@ -1,10 +1,22 @@
 import 'package:dart/dart.dart' as dart;
 
-class Player{
+abstract class Human{
+  void walk();
+}
 
-  final String name;
+enum Team {
+  red, blue, kor, nor
+}
+class Player extends Human {
+
+  String name;
   int xp, age;
-  String team;
+  Team team;
+
+  @override
+  void walk(){
+    print("we go walking");
+  }
 
   Player({required this.name
     , required this.xp
@@ -20,13 +32,13 @@ class Player{
   Player.createKorPlayer({required String name, required int age}) :
     this.age = age,
     this.name = name,
-    this.team = 'KOR',
+    this.team = Team.kor,
     this.xp = 0;
 
   Player.createNorPlayer(String name, int age) :
     this.age = age,
     this.name = name,
-    this.team = "NOR",
+    this.team = Team.nor,
     this.xp = 0;
 
 
@@ -42,12 +54,26 @@ void main(List<String> arguments) {
   num a = 3;
   a = 1.2;
 
-  // var player = Player.createKorPlayer(name : "son", age :30);
-  // player.sayHello();
-  //
-  // var player2 = Player.createNorPlayer("holan", 21);
-  // player2.sayHello();
 
+  var nico = Player(name: 'nico', xp: 1200, team: Team.red, age: 10)
+  ..name = 'kyw'
+  ..xp = 120000
+  ..team = Team.blue
+  ..age = 20;
+
+  var test = nico
+    ..name = 'man'
+    ..xp = 12
+    ..team = Team.red
+    ..age = 10;
+
+
+  nico.sayHello();
+  nico.walk();
+
+}
+
+void nameConstructorTest(){
   var apiData = [{"name" : "kyw","team":"kor", "xp": 999, "age" : 27},
     {"name" : "son","team":"kor", "xp": 999, "age" : 30}];
 
@@ -55,9 +81,6 @@ void main(List<String> arguments) {
     var player = Player.fromJson(data);
     player.sayHello();
   });
-
-
-
 }
 
 typedef ListOfInts = List<int>;

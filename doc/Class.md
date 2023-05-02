@@ -59,6 +59,7 @@ Argument
 
 
 
+
 Named Constructor
 
 - 생성자를 매서드 처럼 선언하여 상황에 따라 다르게 사용할 수 있음
@@ -101,3 +102,121 @@ Named Constructor
   ```
 
   ​
+
+Cascade Notation
+
+- .. 을 사용하여 필드 및 매소드를 바로 호출할 수 있다.
+
+- 생성 직후가 아니고 사용할 수 있다.
+
+- ```dart
+  var man = Player(name: 'kyw', xp: 1200, team: 'red', age: 10)
+    ..name = 'kyw'
+    ..xp = 120000
+    ..team = 'blue'
+    ..age = 20;
+
+  var test = man
+    ..name = 'man'
+    ..xp = 12
+    ..team = 'red'
+    ..age = 10;
+  ```
+
+  ​
+
+Enum
+
+- 정의해서 사용할 때 (java의 enum과 유사)
+
+- ```dart
+  enum Team {
+    red, blue, kor, nor
+  }
+
+  void main(){
+    Team a = Team.red;
+  }
+  ```
+
+  ​
+
+Abstract Classes
+
+- 다른 클래스들이 어떤 구조로 이루어질지를 정의(청사진)
+
+- ```dart
+  abstract class Human{
+    void walk();
+  }
+
+  class Player extends Human {
+    @override
+    void walk(){
+  	print("we go walking");
+    }
+  }
+  ```
+
+  ​
+
+Inheritance
+
+- extends로 상속을 받아서 사용
+
+- super. 을 사용하여 부모클래스의 필드에 접근할 수 있다.
+
+- ```dart
+  class Human{
+    final String name;
+    Human({ required this.name});
+
+    void sayHello(){
+      print("hi my name is $name");
+    }
+  }
+
+  class SoccerPlayer extends Human{
+    final Team team;
+    SoccerPlayer({required super.name, required this.team});
+    
+    @override
+    void sayHello(){
+      super.sayHello();
+    }
+  }
+  ```
+
+- 자식클래스는 부모클래스의 매소드를 override해서 suepr.매소드 호출로 사용 또는 정의하지않고 사용도 가능
+
+
+
+Mixins
+
+- 생성자가 없는 클래스 
+
+- with MixinClass로 사용하여 내부의 프로퍼티와 매소드들을 가져와서 사용
+
+- ```dart
+  class Strong{
+    final double level= 13.11;
+  }
+
+  class QuickRunner{
+    void runQuick(){
+      print("runnnnn");
+    }
+  }
+
+  class BasketPlayer with Strong, QuickRunner{
+    final String name = 'd';
+  }
+
+  void main(){
+    var curry = BasketPlayer();
+    curry.runQuick();
+  }
+  ```
+
+  ​
+
