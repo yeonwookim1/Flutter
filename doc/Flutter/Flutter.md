@@ -22,5 +22,20 @@ Wideget을 상속 받아서 build 매소드를 override해서 사용하게 된�
 
 화면은 scaffold를 가져와서 하는 것이 통상적인 규칙
 
+- class
+
+```
+new 생략
+named parameter
+설명의 클래스 필드에 ? 붙은 건는 필수가 아님
+```
 
 
+
+
+
+Widget
+
+위에 다른걸 올리기 위해서 column을 사용  
+
+Scaffold를 기준으로 여러 Widget을 넣어준다.
