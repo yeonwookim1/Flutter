@@ -39,3 +39,17 @@ Widget
 위에 다른걸 올리기 위해서 column을 사용  
 
 Scaffold를 기준으로 여러 Widget을 넣어준다.
+
+
+
+
+
+요소들을 한 행(가로,세로)에 두기 위해선 Row를 사용
+
+한 열에 (위, 아래) 두기 위해선 Column을 사용
+
+
+
+Container(div) 
+
+하나의 영역을 가지게 사용하는 요소 html의 div와 비슷
