@@ -34,13 +34,13 @@ named parameter
 
 
 
+UI
+
 Widget
 
 위에 다른걸 올리기 위해서 column을 사용  
 
 Scaffold를 기준으로 여러 Widget을 넣어준다.
-
-
 
 
 
@@ -52,4 +52,20 @@ Scaffold를 기준으로 여러 Widget을 넣어준다.
 
 Container(div) 
 
-하나의 영역을 가지게 사용하는 요소 html의 div와 비슷
+- 하나의 영역을 가지게 사용하는 요소 html의 div와 비슷- 
+
+
+- decoration: BoxDecoration을 사용하여 box를 꾸밀 수 있음.
+
+
+
+**
+
+클래스들에게 const 를  자동으로 붙여주거나 또는 무시할 수 있게 설정할 수 있다.
+
+```
+intellij 아래의 문구를 import 부분 아래에 추가하여 준다.
+
+// ignore_for_file: prefer_const_constructors
+```
+

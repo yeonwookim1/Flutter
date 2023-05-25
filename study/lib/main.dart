@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
 
 void main() {
   runApp(App());
@@ -36,33 +37,46 @@ class App extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.8), fontSize: 18),
                       ),
-
                     ],
                   ),
                 ],
               ),
-              SizedBox(height : 120),
-              Text('Total Balance', style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.white.withOpacity(0.8))
-                ,
-              ) ,
-              SizedBox(height: 5,),
-              Text('\$5 200',
+              SizedBox(height: 120),
+              Text(
+                'Total Balance',
+                style: TextStyle(
+                    fontSize: 22, color: Colors.white.withOpacity(0.8)),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                '\$5 200',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 42,
                   fontWeight: FontWeight.w600,
-                )
-                ,),
-              SizedBox(height: 20,),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color : Colors.red,
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(45)),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                      child: Text(
+                        'Transfer',
+                        style: TextStyle(
+                          fontSize: 22,
+                        ),
+                      ),
                     ),
-                    child:Text('Transfer'),
                   ),
                 ],
               ),
