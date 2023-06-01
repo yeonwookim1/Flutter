@@ -69,3 +69,12 @@ intellij 아래의 문구를 import 부분 아래에 추가하여 준다.
 // ignore_for_file: prefer_const_constructors
 ```
 
+
+
+
+
+Reusable Widgets
+
+- 반복되는 소스들을 막기 위해 별도의 위젯으로 구성
+- class 처럼 분리하여 사용할 수 있도록
+- 분리하면서 프로퍼티로 사용하는 것은 이제 더 이상 const를 붙일 수 없음
