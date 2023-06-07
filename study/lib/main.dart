@@ -64,24 +64,93 @@ class App extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Button(
+                      text: "Transfer",
+                      bgColor: Colors.black,
+                      textColor: Colors.amber),
+                  Button(
+                      text: "Request",
+                      bgColor: Color(0xFF1F2123),
+                      textColor: Colors.white),
+                ],
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(45)),
-                    child: Padding(
-                      padding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                      child: Text(
-                        'Transfer',
-                        style: TextStyle(
-                          fontSize: 22,
-                        ),
-                      ),
+                  Text(
+                    'Wallets',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 36,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Button(text: "Request", bgColor : Color(0xFF1F2123), textColor: Colors.white),
+                  Text(
+                    'view all',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.8),
+                      fontSize: 18,
+                    ),
+                  ),
                 ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF1F2123),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Padding(
+                  //verical, horizontal이 같으면 all로 사용 가능
+                  // symmetric(vertical:20, horizontal: 20),
+                  padding: const EdgeInsets.all(30),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Euro',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize:32,
+                              fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                '6 428',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize:20,),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                  'EUR',
+                                  style: TextStyle(
+                                  color: Colors.white.withOpacity(0.8),
+                                  fontSize:20,
+                                  )
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
