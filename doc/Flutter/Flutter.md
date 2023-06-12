@@ -79,3 +79,25 @@ Reusable Widgets(재사용 위젯)
 - class 처럼 분리하여 사용할 수 있도록
 - 분리하면서 프로퍼티로 사용하는 것은 이제 더 이상 const를 붙일 수 없음
 - const로 선언하면 컴파일시 메모리에 저장하여 사용
+
+
+
+Icon
+
+- SDK에 기본적인 Icons들이 내장
+
+- 아이콘에 transform을 입히면 overflow한 아이콘을 추가할 수 있음
+
+- ```dart
+  Transform.scale(
+    scale: 2,
+    child:  const Icon(
+              Icons.euro_rounded,
+              color: Colors.white,
+              size: 98,
+    		),
+   )
+  ```
+
+  ​
+
