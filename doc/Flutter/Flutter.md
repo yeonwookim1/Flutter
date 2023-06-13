@@ -89,6 +89,9 @@ Icon
 - 아이콘에 transform을 입히면 overflow한 아이콘을 추가할 수 있음
 
 - ```dart
+  Container(
+     clipBehavior: Clip.hardEdge,	//overflow된 부분은 숨겨지도록
+     ...
   Transform.scale(
     scale: 2,
     child:  const Icon(
@@ -97,7 +100,12 @@ Icon
               size: 98,
     		),
    )
+    ...
+  )
   ```
 
-  ​
+- container를 넘치는 아이콘 크기는 clipBehavior을 사용하면 overflow된 것에 대한 처리를 할 수 있음
 
+
+
+변수의 앞에 _를 붙이는 것은 private 하다는 의미
