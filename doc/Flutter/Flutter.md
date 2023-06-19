@@ -82,6 +82,8 @@ Reusable Widgets(재사용 위젯)
 
 
 
+
+
 Icon
 
 - SDK에 기본적인 Icons들이 내장
@@ -107,5 +109,7 @@ Icon
 - container를 넘치는 아이콘 크기는 clipBehavior을 사용하면 overflow된 것에 대한 처리를 할 수 있음
 
 
-
 변수의 앞에 _를 붙이는 것은 private 하다는 의미
+
+- 재사용 되는 객체들은 같이 묶어줘서 코드를 작성하자
+- Transform.translate를 겹치는 카드 클래스에 넣어서 작성
