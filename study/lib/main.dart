@@ -17,9 +17,11 @@ class AppState extends StatefulWidget {
 class _AppStateState extends State<AppState> {
   int cnt = 0;
 
+  List<int> numbers = [];
+
   void onClicked() {
     setState(() {
-      cnt++;
+      numbers.add(numbers.length);
     });
   }
 
@@ -36,10 +38,7 @@ class _AppStateState extends State<AppState> {
               'click count',
               style: TextStyle(fontSize: 30),
             ),
-            Text(
-              '$cnt',
-              style: TextStyle(fontSize: 30),
-            ),
+           for(var n in numbers) Text('%n'),
             IconButton(
               onPressed: onClicked,
               icon: const Icon(
