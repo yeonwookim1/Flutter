@@ -7,6 +7,7 @@ void main() {
   runApp(AppState());
 }
 
+//절대 Root
 class AppState extends StatefulWidget {
   const AppState({Key? key}) : super(key: key);
 
@@ -15,39 +16,84 @@ class AppState extends StatefulWidget {
 }
 
 class _AppStateState extends State<AppState> {
-  int cnt = 0;
 
-  List<int> numbers = [];
+  bool showTitle = true;
 
-  void onClicked() {
+  void toggleTitle(){
     setState(() {
-      numbers.add(numbers.length);
+      showTitle = !showTitle;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: TextTheme(
+          titleLarge: TextStyle(
+            color:Colors.red,
+          ),
+        ),
+      ),
       home: Scaffold(
         backgroundColor: Color(0xFFF4EDDB),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'click count',
-              style: TextStyle(fontSize: 30),
-            ),
-           for(var n in numbers) Text('%n'),
+            showTitle ? MyLargeTitle() : Text("nothing"),
             IconButton(
-              onPressed: onClicked,
-              icon: const Icon(
-                Icons.add_box_rounded,
-              ),
-            )
+                onPressed: toggleTitle,
+                icon: Icon(Icons.remove_red_eye)
+            ),
           ],
         )),
       ),
     );
   }
+}
+
+
+
+
+class MyLargeTitle extends StatefulWidget{
+
+  const MyLargeTitle({
+   Key? key,
+  }) : super(key: key);
+
+  @override
+  State<MyLargeTitle> createState() => _MyLargeTitleState();
+}
+
+class _MyLargeTitleState extends State<MyLargeTitle> {
+
+  int count = 0;
+
+  //build보다 먼저 실행되어야할때
+  @override
+  void initState() {
+    super.initState();
+    //변수 초기화 등
+    print("initState!");
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    print("dispose");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("build!");
+    return Text(
+      "My Large Title",
+      style: TextStyle(
+        fontSize: 30, color: Theme.of(context).textTheme.titleLarge!.color,
+      ),
+    );
+  }
+
 }

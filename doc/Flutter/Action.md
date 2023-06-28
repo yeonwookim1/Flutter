@@ -58,6 +58,7 @@ state
 
 
 
+
 setState
 
 - staet클래스에게 데이터가 변경되었다고 알리는 함수
@@ -74,4 +75,39 @@ setState
     }
    ```
 
-- setState 를 사용하지 않으면 데이터가 변경되어도 build매서드를 다시 실행하지 않는다.
+- **setState 를 사용하지 않으면 데이터가 변경되어도 build매서드를 다시 실행하지 않는다.**
+
+
+BuildContext
+
+- flutter는 Widte Tree의 형태를 가짐
+
+- 부모의 데이터를 접근하기 위해서
+
+- context는 이전에 있는 모든 상위 요소들에 대한 정보를 담고 있음
+
+- ```dart
+  class _AppStateState extends State<AppState> {
+    @override
+    Widget build(BuildContext context) {
+      return MaterialApp(
+        theme: ThemeData( 
+        .....
+  }
+
+  class MyLargeTitle extends StatelessWidget{
+  ...
+  style: TextStyle(
+          fontSize: 30, color: Theme.of(context).textTheme.titleLarge!.color,
+        ),
+  ....
+  }
+  ```
+
+
+
+Widget Lifecycle
+
+- initState > build > dispose
+- initState : 제일 먼저 실행되며 단 1번만 실행
+- dispose : 위젯이 제거되기 마지막에 실행
