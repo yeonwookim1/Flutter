@@ -22,4 +22,8 @@ Flexible
             .......
   ```
 
-  ​
+
+
+Expanded
+
+- Expanded Widget을 사용하면 화면 시작부터 끝까지 확장이 가능
