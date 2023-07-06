@@ -27,3 +27,40 @@ Flexible
 Expanded
 
 - Expanded Widget을 사용하면 화면 시작부터 끝까지 확장이 가능
+
+
+
+Timer
+
+- dart 라이브러리에 포함
+
+- duration 마다 (timer){}함수를 호출
+
+- ```dart
+  /* 
+  void onStartPressed(){
+    	timer = Timer.periodic(duration, (timer) {...})
+    }
+  */
+    void onTick(Timer timer){
+      setState(() {
+        totalSeconds-= 1;
+      });
+    }
+
+    void onStartPressed(){
+      timer = Timer.periodic(Duration(seconds:1), onTick,); //<- 함수명만 작성
+    }
+  ```
+
+  ​
+
+format
+
+- Duration을 사용하여 format을 맞출 수 있다.
+
+- ```dart
+  var duration = Duration(seconds: seconds);
+  ```
+
+  ​
