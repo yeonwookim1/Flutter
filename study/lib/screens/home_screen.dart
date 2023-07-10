@@ -10,8 +10,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const twentyFiveMinutes = 5;
-  int totalSeconds = 1500;
+  static const twentyFiveMinutes = 60;
+  int totalSeconds = twentyFiveMinutes;
   int pomodorosCount = 0;
   bool isRunning = false;
   late Timer timer;
@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         timer.cancel();
         isRunning = false;
-        totalSeconds = 5;
+        totalSeconds = twentyFiveMinutes;
         pomodorosCount++;
       });
     }else {
@@ -42,6 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       isRunning = true;
     });
+  }
+
+  void onResetPressed(){
+      if(isRunning){
+        setState(() {
+          timer.cancel();
+          isRunning = false;
+          totalSeconds = twentyFiveMinutes;
+        });
+      }
   }
 
   void onPausePressed(){
@@ -74,13 +84,26 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 2,
             child: Center(
-              child: IconButton(
-                iconSize: 120,
-                color: Theme.of(context).cardColor,
-                onPressed: isRunning ? onPausePressed : onStartPressed,
-                icon: Icon(isRunning
-                    ? Icons.pause_circle_outline
-                    : Icons.play_circle_outline),
+              child: Column(
+                children: [
+                  Container(
+                    width: 100, height: 100,
+                  ),
+                  IconButton(
+                    iconSize: 120,
+                    color: Theme.of(context).cardColor,
+                    onPressed: isRunning ? onPausePressed : onStartPressed,
+                    icon: Icon(isRunning
+                        ? Icons.pause_circle_outline
+                        : Icons.play_circle_outline),
+                  ),
+                  IconButton(
+                    iconSize: 30,
+                    color: Theme.of(context).cardColor,
+                    onPressed: onResetPressed,
+                    icon: Icon(Icons.lock_reset_rounded),
+                  ),
+                ],
               ),
             ),
           ),
