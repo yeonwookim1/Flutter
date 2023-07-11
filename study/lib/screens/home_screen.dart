@@ -45,13 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void onResetPressed(){
-      if(isRunning){
-        setState(() {
-          timer.cancel();
-          isRunning = false;
-          totalSeconds = twentyFiveMinutes;
-        });
-      }
+      setState(() {
+        timer.cancel();
+        isRunning = false;
+        totalSeconds = twentyFiveMinutes;
+      });
   }
 
   void onPausePressed(){
@@ -83,8 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Flexible(
             flex: 2,
-            child: Center(
-              child: Column(
+            child: Column(
                 children: [
                   Container(
                     width: 100, height: 100,
@@ -104,7 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: Icon(Icons.lock_reset_rounded),
                   ),
                 ],
-              ),
             ),
           ),
           Flexible(
