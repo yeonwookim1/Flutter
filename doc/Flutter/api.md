@@ -43,4 +43,4 @@ JSON
   final List<dynamic> webtoons = jsonDecode(response.body);	//object List
   ```
 
-  ​
+- 생성자를 .fromJson을 이용해서 json을 파싱해서 처리할 수 있다.
