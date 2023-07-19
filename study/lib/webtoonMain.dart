@@ -3,7 +3,7 @@ import 'package:study/services/api_service.dart';
 
 void main(){
   print("request");
-  ApiService().getTodaysToons();
+  ApiService.getTodaysToons();
   runApp(Webtoon());
 }
 

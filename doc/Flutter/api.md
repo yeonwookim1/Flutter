@@ -44,3 +44,28 @@ JSON
   ```
 
 - 생성자를 .fromJson을 이용해서 json을 파싱해서 처리할 수 있다.
+
+
+
+FutrueBuilder
+
+- StatefulWidget 을 사용하여 service에서 list를 받아와 setState로 build를 재실행해서 보여 주는 방법 > 불편
+
+- StatelessWidget을 사용하여 진행한다 > Future를 받아서 기다리게 하는 방법 > FutrueBuilder
+
+- snapshot : future의 상태를 알 수 있음
+
+- setState도 없이 future를 기다렸다가 실행
+
+- ```dart
+   body: FutureBuilder(
+          future: webtoons,
+          builder: (context, snapshot) {
+              if(snapshot.hasData){
+              	return Text("There is data!");
+            	}
+            return Text('Loading');
+          },
+  ```
+
+  ​
