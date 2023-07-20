@@ -18,6 +18,7 @@ class ApiService {
       final List<dynamic> webtoons = jsonDecode(response.body); //jsonList 형태로 온다.
       for(var webtoon in webtoons){
         final toon = WebtoonModel.fromJson(webtoon);
+
         webtoonInstances.add(toon);
       }
 

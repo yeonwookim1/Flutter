@@ -53,19 +53,17 @@ FutrueBuilder
 
 - StatelessWidget을 사용하여 진행한다 > Future를 받아서 기다리게 하는 방법 > FutrueBuilder
 
-- snapshot : future의 상태를 알 수 있음
+- 두번째 인자(snapshot) : future의 상태를 알 수 있음
 
 - setState도 없이 future를 기다렸다가 실행
 
 - ```dart
    body: FutureBuilder(
           future: webtoons,
-          builder: (context, snapshot) {
-              if(snapshot.hasData){
+          builder: (context, futureData) {
+              if(futureData.hasData){
               	return Text("There is data!");
             	}
             return Text('Loading');
           },
-  ```
-
-  ​
+   ```
