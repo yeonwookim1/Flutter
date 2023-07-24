@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../models/webtoon.dart';
 import '../services/api_service.dart';
+import '../widgets/webtoon_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -45,13 +46,13 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-BoxShadow getWebToonShadow(){
-  return BoxShadow(
-    blurRadius: 15,
-    offset: const Offset(10, 10),
-    color: Colors.black.withOpacity(0.5),
-  );
-}
+  BoxShadow getWebToonShadow() {
+    return BoxShadow(
+      blurRadius: 15,
+      offset: const Offset(10, 10),
+      color: Colors.black.withOpacity(0.5),
+    );
+  }
 
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> futureData) {
     return ListView.separated(
@@ -61,29 +62,8 @@ BoxShadow getWebToonShadow(){
       separatorBuilder: (context, index) => const SizedBox(width: 40),
       itemBuilder: (context, index) {
         var webtoon = futureData.data![index];
-        return Column(children: [
-          Container(
-              width: 250,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  getWebToonShadow()
-                ]
-              ),
-              child: Image.network(
-                webtoon.thumb,
-              )),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            webtoon.title,
-            style: const TextStyle(
-              fontSize: 22,
-            ),
-          ),
-        ]);
+        return Webtoon(
+            id: webtoon.id, title: webtoon.title, thumb: webtoon.thumb);
       },
     );
   }

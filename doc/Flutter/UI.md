@@ -149,13 +149,12 @@ Image.network
     runApp(const App());
   }
 
-
   //방법3
   //위 방법도 안되는 경우가 있음
-  //IDE tool 상단에 보면 Chrome(web) 선택하는 옆 부분에 main.dart 항목의 Edit Configurations를 클릭
+  //IDE tool 상단에 보면 Chrome(web) 선택하는 옆에 main.dart 항목의 Edit Configurations를 클릭
   //run args에 --web-renderer html 추가
 
   ```
 
-  ​
+
 

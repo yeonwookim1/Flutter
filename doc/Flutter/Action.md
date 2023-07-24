@@ -111,3 +111,38 @@ Widget Lifecycle
 - initState > build > dispose
 - initState : 제일 먼저 실행되며 단 1번만 실행
 - dispose : 위젯이 제거되기 마지막에 실행
+
+
+
+이벤트 감지
+
+- GestureDetector : tap과 같은 액션을 감지 해서 행동할 수 있다.
+
+- ```dart
+  return GestureDetector(
+        onTap: () {
+         ....
+        },
+  ```
+
+  ​
+
+Navigator
+
+- 다른 스크린으로 이동하기 위해 사용
+
+- 위젯으로 route를 지원하지 않기에 builder로 감싸줘야한다. (StatelessWidget을 스크린처럼 보이게 함)
+
+- ```dart
+  return GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) =>
+              DetailScreen(
+                  title: title, thumb: thumb, id: id),)) //Stateless 를 지원하지 않음
+        },
+
+  ```
+
+- Navigator.push를 사용하면 애니매이션 효과를 얻을 수 있음
+
+- fullscreenDialog: true를 사용하면 아래에서 카드가 나오도록 이벤트를 줄 수 있다.(참고)
