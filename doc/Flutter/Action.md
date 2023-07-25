@@ -146,3 +146,10 @@ Navigator
 - Navigator.push를 사용하면 애니매이션 효과를 얻을 수 있음
 
 - fullscreenDialog: true를 사용하면 아래에서 카드가 나오도록 이벤트를 줄 수 있다.(참고)
+
+
+
+Hero widget(참고)
+
+- 새로운 화면을 기존의 것을 활용하여 보이게 애니매이션 하여 연결
+- 연결되는 hero widget의 tag값을 서로 맞춰주면 연결되어 보여준다.

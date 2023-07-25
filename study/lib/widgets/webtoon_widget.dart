@@ -16,6 +16,7 @@ class Webtoon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        print("tap event");
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -26,15 +27,18 @@ class Webtoon extends StatelessWidget {
         ); //Stateless 를 지원하지 않음
       },
       child: Column(children: [
-        Container(
-            width: 250,
-            clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [getWebToonShadow()]),
-            child: Image.network(
-              thumb,
-            )),
+        Hero(
+          tag: id,
+          child: Container(
+              width: 250,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [getWebToonShadow()]),
+              child: Image.network(
+                thumb,
+              )),
+        ),
         const SizedBox(
           height: 10,
         ),

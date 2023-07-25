@@ -27,15 +27,15 @@ class HomeScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: webtoons,
-        builder: (context, futureData) {
-          print(futureData.hasData);
-          if (futureData.hasData) {
+        builder: (context, snapShot) {
+          print(snapShot.hasData);
+          if (snapShot.hasData) {
             return Column(
               children: [
                 const SizedBox(
                   height: 50,
                 ),
-                Expanded(child: makeList(futureData)),
+                Expanded(child: makeList(snapShot)),
                 //expanded(남는 공간을 차지) 또는 높이를 지정해줘야한다. 아니면 exception
               ],
             );

@@ -14,33 +14,38 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 1, //음영
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 1, //음영
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.green,
-          title: Text(
-            title,
-            style: const TextStyle(
-              fontSize: 24,
-            ),
+        foregroundColor: Colors.green,
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 24,
           ),
         ),
+      ),
       body: Column(
         children: [
-          const SizedBox(height: 50,),
+          const SizedBox(
+            height: 50,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                  width: 250,
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [getWebToonShadow()]),
-                  child: Image.network(
-                    thumb,
-                  )),
+              Hero(
+                tag: id,
+                child: Container(
+                    width: 250,
+                    clipBehavior: Clip.hardEdge,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [getWebToonShadow()]),
+                    child: Image.network(
+                      thumb,
+                    )),
+              ),
             ],
           ),
         ],
