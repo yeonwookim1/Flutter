@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study/models/webtoon_episode_model.dart';
 import 'package:study/services/api_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/webtoon_detail_model.dart';
+import '../widgets/Episode.dart';
 
 class DetailScreen extends StatefulWidget {
   //받아서 사용해야하기에 sattefulWidget을 사용
@@ -104,34 +106,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       return Column(
                         children: [
                           for (var episode in snapshot.data!)
-                            Container(
-                                margin: const EdgeInsets.only(bottom: 10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.green.shade300,
-                                  boxShadow: [getWebToonShadow()],
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 20),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        episode.title,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                      const Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: Colors.white,
-                                      )
-                                    ],
-                                  ),
-                                ))
+                            Episode(episode: episode, webtoonId:widget.id)
                         ],
                       );
                     }
@@ -152,3 +127,4 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 }
+
