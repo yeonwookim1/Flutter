@@ -67,3 +67,40 @@ FutrueBuilder
             return Text('Loading');
           },
    ```
+
+
+
+
+
+라이브러리
+
+url_launcher
+
+- URL을 실행시켜 브라우저로 연결시켜준다.
+
+- ```dart
+  onButtonTap() async {
+      final url = Uri.parse("https://comic.naver.com/webtoon/detail?titleId=${webtoonId}&no=${int.parse(episode.id) + 1}");
+      //launchUrl를 사용하여 URL을 띄어준다.
+      await launchUrl(url);
+    }
+  ```
+
+
+
+shared_preferences
+
+- 저장소처럼 사용할 수 있도록 사용(메모리 저장)
+
+- getInstance를 통하여 저장공간을 할당하여 사용한다.
+
+- ```dart
+  prefs = await SharedPreferences.getInstance();
+
+
+  final likedToons = prefs.getStringList('likedToons');    //get
+
+  prefs.setStringList('likedToons', []);    //저장
+  ```
+
+  ​
