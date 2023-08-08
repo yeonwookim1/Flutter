@@ -15,7 +15,7 @@ Future
 
 - 비동기
 
-- 기다리고 처리 하고 싶은경우 await를 처리한다. (awiat는 비동기 함수에서만 사용 가능)
+- 기다리고 처리 하고 싶은경우 await를 처리한다. (awiat는 비동기 함수(async) 에서만 사용 가능)
 
 - ```dart
   //http 라이브러리 사용
@@ -43,7 +43,7 @@ JSON
   final List<dynamic> webtoons = jsonDecode(response.body);	//object List
   ```
 
-- 생성자를 .fromJson을 이용해서 json을 파싱해서 처리할 수 있다.
+- 플루터에서는 생성자를 JSON 형태로 자주 사용, .fromJson을 이용해서 json을 파싱해서 처리할 수 있다. 
 
 
 
@@ -96,6 +96,7 @@ shared_preferences
 
 - ```dart
   prefs = await SharedPreferences.getInstance();
+  ```
 
 
   final likedToons = prefs.getStringList('likedToons');    //get
@@ -103,4 +104,5 @@ shared_preferences
   prefs.setStringList('likedToons', []);    //저장
   ```
 
-  ​
+  
+  ```
